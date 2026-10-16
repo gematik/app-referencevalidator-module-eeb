@@ -1,0 +1,2 @@
+kbv.basis#1.3.0:
+- Removed duplicated IDs for slices
