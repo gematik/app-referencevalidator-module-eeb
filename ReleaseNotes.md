@@ -2,9 +2,13 @@
 
 # Release Notes
 
-## Release YOUR_VERSION
+## Release 2.0.0
 
 ### changed
 
 - New Validation Module configuration for the newer Reference Validator 3.0.0+
 - Project Structure
+
+### removed
+
+- Profiles 1.0.1
