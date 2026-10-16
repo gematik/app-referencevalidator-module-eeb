@@ -1,0 +1,2 @@
+kbv.ita.for#1.1.0:
+- Removed duplicated IDs for slices
