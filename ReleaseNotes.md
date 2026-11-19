@@ -11,4 +11,4 @@
 
 ### removed
 
-- Profiles 1.0.1
+- Implementation Guides 1.0.1 and 1.1.0

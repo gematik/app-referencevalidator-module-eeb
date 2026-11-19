@@ -1,0 +1,197 @@
+{
+  "resourceType": "Bundle",
+  "id": "eeb-bescheinigung-v2",
+  "meta": {
+    "profile": [
+      "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungBundle"
+    ]
+  },
+  "type": "message",
+  "identifier": {
+    "system": "urn:ietf:rfc:3986",
+    "value": "urn:uuid:bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb"
+  },
+  "timestamp": "2026-06-02T08:05:00+00:00",
+  "entry": [
+    {
+      "fullUrl": "https://gematik.de/fhir/MessageHeader/11111111-1111-1111-1111-111111111111",
+      "resource": {
+        "resourceType": "MessageHeader",
+        "id": "11111111-1111-1111-1111-111111111111",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/eeb/StructureDefinition/EEBBescheinigungHeader"
+          ]
+        },
+        "response": {
+          "code": "ok",
+          "identifier": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa"
+        },
+        "extension": [
+          {
+            "url": "https://gematik.de/fhir/eeb/StructureDefinition/versionEEB",
+            "valueCode": "2.0"
+          },
+          {
+            "url": "https://gematik.de/fhir/eeb/StructureDefinition/servicePeriod",
+            "valuePeriod": {
+              "start": "2026-04-01",
+              "end": "2026-06-30"
+            }
+          },
+          {
+            "url": "https://gematik.de/fhir/eeb/StructureDefinition/noAddressLine",
+            "valueBoolean": true
+          },
+          {
+            "url": "https://gematik.de/fhir/eeb/StructureDefinition/KVNRinClearing",
+            "valueDate": "2026-06-01"
+          }
+        ],
+        "text": {
+          "status": "additional",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">EEBBescheinigungHeader für eEB v2</div>"
+        },
+        "eventCoding": {
+          "system": "https://gematik.de/fhir/directory/CodeSystem/OrganizationProfessionOID",
+          "code": "1.2.276.0.76.4.50",
+          "display": "Betriebsstätte Arzt"
+        },
+        "source": {
+          "endpoint": "kim://kasse@example.kim.telematik"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://gematik.de/fhir/Patient/1f6f2df3-d9f4-4e34-9c76-3b8337b7a09c",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "1f6f2df3-d9f4-4e34-9c76-3b8337b7a09c",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/eeb/StructureDefinition/EEBPatient"
+          ]
+        },
+        "name": [
+          {
+            "use": "official",
+            "family": "Haselnuss",
+            "_family": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/humanname-own-name",
+                  "valueString": "Haselnuss"
+                }
+              ]
+            },
+            "given": [
+              "Eileen"
+            ]
+          }
+        ],
+        "birthDate": "1993-08-13",
+        "address": [
+          {
+            "type": "both",
+            "country": "DE",
+            "_country": {
+              "extension": [
+                {
+                  "url": "http://hl7.org/fhir/StructureDefinition/iso21090-codedString",
+                  "valueCoding": {
+                    "system": "http://fhir.de/CodeSystem/deuev/anlage-8-laenderkennzeichen",
+                    "code": "D"
+                  }
+                }
+              ]
+            },
+            "city": "Berlin",
+            "postalCode": "10623"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "https://gematik.de/fhir/Coverage/2d4da53a-413a-48fe-b908-2e67b576152u",
+      "resource": {
+        "resourceType": "Coverage",
+        "id": "2d4da53a-413a-48fe-b908-2e67b576152u",
+        "meta": {
+          "profile": [
+            "https://gematik.de/fhir/eeb/StructureDefinition/EEBCoverageVSDM"
+          ]
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://fhir.de/CodeSystem/versicherungsart-de-basis",
+              "version": "1.6.0",
+              "code": "GKV",
+              "display": "gesetzliche Krankenversicherung"
+            }
+          ]
+        },
+        "extension": [
+          {
+            "url": "http://fhir.de/StructureDefinition/gkv/wop",
+            "valueCoding": {
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_ITA_WOP",
+              "version": "1.00",
+              "code": "52",
+              "display": "Baden-Württemberg"
+            }
+          },
+          {
+            "url": "http://fhir.de/StructureDefinition/gkv/versichertenart",
+            "valueCoding": {
+              "system": "https://fhir.kbv.de/CodeSystem/KBV_CS_SFHIR_KBV_VERSICHERTENSTATUS",
+              "version": "1.02",
+              "code": "3",
+              "display": "Familienangehoerige"
+            }
+          },
+          {
+            "url": "http://fhir.de/StructureDefinition/gkv/zuzahlungsstatus",
+            "extension": [
+              {
+                "url": "status",
+                "valueBoolean": true
+              },
+              {
+                "url": "gueltigBis",
+                "valueDate": "2027-06-09"
+              }
+            ]
+          }
+        ],
+        "payor": [
+          {
+            "identifier": {
+              "system": "http://fhir.de/sid/arge-ik/iknr",
+              "value": "101575519"
+            },
+            "display": "Techniker Krankenkasse"
+          },
+          {
+            "identifier": {
+              "system": "http://fhir.de/sid/arge-ik/iknr",
+              "value": "105177505"
+            },
+            "display": "Techniker Krankenkasse"
+          }
+        ],
+        "text": {
+          "status": "additional",
+          "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">EEBCoverage gemäß VSDM2</div>"
+        },
+        "status": "active",
+        "beneficiary": {
+          "reference": "Patient/1f6f2df3-d9f4-4e34-9c76-3b8337b7a09c"
+        },
+        "period": {
+          "start": "2018-01-01"
+        }
+      }
+    }
+  ]
+}
